@@ -6,7 +6,7 @@
 /*   By: cdeniau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 15:19:16 by cdeniau           #+#    #+#             */
-/*   Updated: 2016/10/07 15:50:43 by cdeniau          ###   ########.fr       */
+/*   Updated: 2016/10/07 16:49:50 by cdeniau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void						handle_64(char *ptr)
 
 void						nm(void *ptr)
 {
-	int						first_bytes;
+	unsigned int			first_bytes;
 
 	first_bytes = *(int *) ptr;
 	if (first_bytes == MH_MAGIC_64)
