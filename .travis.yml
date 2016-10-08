@@ -1,4 +1,3 @@
 language: c
-compiler:
-  - gcc
 script: "make -C libft && make re"
+osx_image: xcode8
