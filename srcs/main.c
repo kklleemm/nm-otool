@@ -6,12 +6,15 @@
 /*   By: cdeniau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/07 15:19:16 by cdeniau           #+#    #+#             */
-/*   Updated: 2016/10/08 12:19:14 by cdeniau          ###   ########.fr       */
+/*   Updated: 2016/10/08 15:41:34 by cdeniau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** TODO use libft
+** Mach-O binary 64-bit Hex signature is FE ED FA CF
+** ... also called Magic Number
+** Magic numbers implement strongly typed data and are a form of in-band signaling
+** to the controlling program that reads the data type(s) at program run-time.
  */
 
 #include <nm-otool.h>

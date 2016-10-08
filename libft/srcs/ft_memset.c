@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nm-otool.h                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdeniau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/08 12:15:55 by cdeniau           #+#    #+#             */
-/*   Updated: 2016/10/08 13:48:36 by cdeniau          ###   ########.fr       */
+/*   Created: 2016/10/08 13:45:47 by cdeniau           #+#    #+#             */
+/*   Updated: 2016/10/08 13:45:58 by cdeniau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <sys/mman.h>
-#include <mach-o/loader.h>
-#include <mach-o/nlist.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <stdlib.h>
-#include "libft.h"
+#include <ctype.h>
 
-void						handle_64(char *ptr);
-void						print_output(int nsyms, int symoff, int stroff, void *ptr);
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned long	ul;
+	unsigned long	*pul;
+	char			*s;
+
+	ul = (char)c;
+	ul = ul | (ul << 8);
+	ul = ul | (ul << 16);
+	ul = ul | (ul << 32);
+	pul = (unsigned long *)b;
+	while (len > 8)
+	{
+		*pul = ul;
+		pul++;
+		len -= 8;
+	}
+	s = (char *)pul;
+	while (len)
+	{
+		*s = (char)c;
+		s++;
+		len--;
+	}
+	return (b);
+}

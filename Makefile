@@ -6,7 +6,7 @@
 #    By: cdeniau <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/07 15:58:14 by cdeniau           #+#    #+#              #
-#    Updated: 2016/10/08 12:15:17 by cdeniau          ###   ########.fr        #
+#    Updated: 2016/10/08 15:41:48 by cdeniau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ INCS_DIR	= incs
 
 SRCS		= main.c					\
 			  print_output.c			\
-			  handle_64.c
+			  handle_64.c				\
    
 
 OBJS		= $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))

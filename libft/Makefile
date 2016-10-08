@@ -6,7 +6,7 @@
 #    By: cdeniau <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/07 16:01:35 by cdeniau           #+#    #+#              #
-#    Updated: 2016/10/07 17:13:50 by cdeniau          ###   ########.fr        #
+#    Updated: 2016/10/08 15:47:07 by cdeniau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,11 @@ OBJS_DIR   = objs
 INCS_DIR   = incs
 S		   = ft_errno.c						\
 			 ft_itoa.c						\
-			 ft_strlen.c
+			 ft_strlen.c					\
+			 ft_putstr.c					\
+			 ft_putendl.c					\
+			 ft_print_hex.c					\
+			 ft_memset.c					\
 
 SRCS	   = $(addprefix $(SRCS_DIR)/, $S)
 OBJS       = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
@@ -37,7 +41,7 @@ $(NAME): $(OBJS)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(ALL_CFLAGS) -I $(INCS_DIR) -c $< -o $@
-	@echo "Compilation"
+	@echo "\033[A\033[K\033[A"
 
 clean:
 	@$(RM) $(OBJS)	
