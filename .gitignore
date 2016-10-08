@@ -1,2 +1,6 @@
 srcs/nm
 *.swp
+*.a
+*.o
+.*.*
+ft_nm

@@ -6,11 +6,11 @@
 #    By: cdeniau <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/07 15:58:14 by cdeniau           #+#    #+#              #
-#    Updated: 2016/10/07 16:47:41 by cdeniau          ###   ########.fr        #
+#    Updated: 2016/10/08 12:15:17 by cdeniau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= nm
+NAME		= ft_nm
 
 ALL_CFLAGS	= -Wall -Wextra -Werror
 CC			= gcc
@@ -22,6 +22,9 @@ SRCS_DIR	= srcs
 INCS_DIR	= incs
 
 SRCS		= main.c					\
+			  print_output.c			\
+			  handle_64.c
+   
 
 OBJS		= $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 
