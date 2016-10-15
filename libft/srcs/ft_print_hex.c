@@ -6,7 +6,7 @@
 /*   By: cdeniau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 13:40:03 by cdeniau           #+#    #+#             */
-/*   Updated: 2016/10/08 15:32:50 by cdeniau          ###   ########.fr       */
+/*   Updated: 2016/10/15 16:04:37 by cdeniau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void					ft_print_hex(void *ptr)
 		address = address / 16;
 		i--;
 	}
-	ft_putstr("0000000");
-	ft_putstr(str);
+	if (ft_strlen(str) != 0)
+	{
+		ft_putstr("0000000");
+		ft_putstr(str);
+	}
 	write (1, " ", 1);
 }

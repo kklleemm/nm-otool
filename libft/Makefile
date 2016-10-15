@@ -6,7 +6,7 @@
 #    By: cdeniau <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/07 16:01:35 by cdeniau           #+#    #+#              #
-#    Updated: 2016/10/08 15:47:07 by cdeniau          ###   ########.fr        #
+#    Updated: 2016/10/15 17:47:03 by cdeniau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,11 @@ S		   = ft_errno.c						\
 			 ft_putendl.c					\
 			 ft_print_hex.c					\
 			 ft_memset.c					\
+			 ft_arr_sort.c					\
+			 ft_strcmp.c					\
+			 ft_memcmp.c					\
+			 ft_arr_sort.c					\
+			 ft_strdup.c					\
 
 SRCS	   = $(addprefix $(SRCS_DIR)/, $S)
 OBJS       = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))

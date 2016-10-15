@@ -6,7 +6,7 @@
 /*   By: cdeniau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 12:10:23 by cdeniau           #+#    #+#             */
-/*   Updated: 2016/10/08 15:58:42 by cdeniau          ###   ########.fr       */
+/*   Updated: 2016/10/15 17:55:05 by cdeniau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 #include <nm-otool.h>
 
+#define HUE 0xff
+
 void						print_output(int nsyms, int symoff, int stroff, void *ptr)
 {
 	int						i;
@@ -29,20 +31,20 @@ void						print_output(int nsyms, int symoff, int stroff, void *ptr)
 
 	array = ptr + symoff;
 	str_tab = ptr + stroff;
+	ft_arr_sort(array, str_tab);
 	for (i = 0 ;  i < nsyms ; ++i)
 	{
-		ft_print_hex((void *) array[i].n_value);
-		if (array[i].n_type == N_STAB)
-			ft_putstr("Symbolic debugging entry");
-		else if (array[i].n_type == N_PEXT)
-			ft_putstr("Private external symbol bit");
+		array[i].n_value ? ft_print_hex((void *) array[i].n_value) : write (1, "                  ", 17);
+	//	printf ("%d\n", array[i].n_type & HUE);
+		if (array[i].n_type == N_PEXT)
+			ft_putstr("T");// Private external symbol bit
 		else if (array[i].n_type == N_TYPE)
-			ft_putstr("Mask for the type bits");
+			ft_putstr("t");// Mask for the type bits
 		else if (array[i].n_type == N_EXT)
-			ft_putstr("External symbol bit, set for external symbols");
-
-		write (1, " | ", 3);
-
+			ft_putstr("U");//External symbol bit, set for external symbols
+	//	else// (array[i].n_type == N_STAB)
+//			ft_putstr(" ");// Symbolic debugging entry
+		/*
 		if (array[i].n_sect == N_INDR)
 			ft_putstr("Type indirect");
 		else if (array[i].n_sect == N_UNDF)
@@ -53,8 +55,8 @@ void						print_output(int nsyms, int symoff, int stroff, void *ptr)
 			ft_putstr("Prebound undefined (defined in a dylib)");
 		else if (array[i].n_sect == N_INDR)
 			ft_putstr("Indirect");
-
-		write (1, " | ", 3);
-		printf ("%s\n", str_tab + array[i].n_un.n_strx);
+		*/
+		if (ft_strlen(str_tab + array[i].n_un.n_strx))
+			printf (" %s\n", str_tab + array[i].n_un.n_strx);
 	}
 }
